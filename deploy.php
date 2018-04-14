@@ -1,2 +1,2 @@
 <?php
-exec('git reset --hard; git pull -f --no-edit');
+exec('git reset --hard; git pull --no-edit');
