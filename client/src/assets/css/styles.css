@@ -1,0 +1,230 @@
+@charset "UTF-8";
+
+/**************************************/
+/* Common                             */
+/**************************************/
+#container {
+    display: block;
+    overflow: hidden;
+    min-width: 1000px;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.wrap {
+    width: 960px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+/**************************************/
+/* Gantt                              */
+/**************************************/
+.gantt-container {
+    display: table;
+    width: 100%;
+}
+
+.gantt-head, .gantt-body {
+    box-sizing: border-box;
+    display: table-cell;
+    height: 100%;
+    vertical-align: top;
+}
+
+.gantt-header {
+    box-sizing: border-box;
+    position: relative;
+    height: 40px;
+}
+
+.gantt-header::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #817f7f;
+}
+
+.gantt-main > .gantt-row {
+    border-bottom: 1px solid #ccc;
+}
+
+.gantt-row { height: 60px; }
+.gantt-column { width: 188px; }
+.gantt-column-half { width: 94px; }
+.gantt-column-quarter { width: 47px; }
+
+/* Gantt Head */
+/****************************/
+.gantt-head {
+    width: 240px;
+}
+
+.gantt-head .gantt-header {
+    display: table;
+    width: 100%;
+}
+
+.gantt-head .gantt-header > span {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.gantt-head .gantt-main {
+    border-right: 1px solid #817f7f;
+}
+
+.gantt-user {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.gantt-user:hover {
+    text-decoration: underline;
+}
+
+.gantt-user > span {
+    display: table-cell;
+    padding: 0 20px;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.gantt-user.gantt-user--new {
+    position: relative;
+}
+
+.gantt-user.gantt-user--new::before,
+.gantt-user.gantt-user--new::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 30px;
+    bottom: 0;
+    margin: auto 0;
+    background-color: #817f7f;
+    pointer-events: none;
+}
+
+.gantt-user.gantt-user--new::before {
+    width: 18px;
+    height: 2px;
+}
+
+.gantt-user.gantt-user--new::after {
+    width: 2px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+/* Gantt Body */
+/****************************/
+.gantt-body {
+    position: relative;
+    display: block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 700px;
+    height: 100%;
+    padding: 0 25px;
+}
+
+.gantt-body .gantt-header::after {
+    right: -25px;
+    left: -25px;
+}
+
+.gantt-body-inner {
+}
+
+.gantt-body .gantt-main > .gantt-row {
+    margin: 0 -25px;
+}
+
+.gantt-body-timeline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+}
+
+.gantt-body-timeline li {
+    position: relative;
+    float: left;
+}
+
+.gantt-body-timeline li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -1px;
+    width: 1px;
+    height: 100%;
+    max-height: 10px;
+    background-color: #817f6f;
+    pointer-events: none;
+}
+
+.gantt-body-timeline > li {
+    min-height: 1em;
+}
+
+.gantt-body-timeline > li:last-child {
+    width: 0;
+}
+
+.gantt-body-timeline .gantt-dot li::before {
+    height: 5px;
+}
+
+.gantt-body-timeline .gantt-dot {
+    height: 5px;
+    margin-bottom: -4px;
+    margin-left: 47px;
+}
+
+.gantt-body-timeline .gantt-dot li {
+    height: 1px;
+}
+
+.gantt-body-timeline li time {
+    position: relative;
+    top: -0.75em;
+    left: -1.8em;
+    display: inline-block;
+    min-width: 3.5em;
+    text-align: center;
+}
+
+.gantt-body-timeline li time span {
+    /*display: none;*/
+}
+
+.gantt-body-timeline .gantt-timeline--now {
+}
+
+.gantt-body-timeline .gantt-timeline--now time {
+    /*left: -1.5em;*/
+}
+
+.gantt-body-timeline .gantt-timeline--now time span {
+    display: inline-block;
+}
+
+
+/**************************************/
+/* Task Edit                          */
+/**************************************/
